@@ -1,0 +1,39 @@
+var http = require('http');
+
+var test = function(index,cb){
+     
+     var randoms = Math.floor((Math.random() * 10) + 1);
+     console.log(index+" is "+randoms);
+     var test2 = function(cb){
+         
+          setTimeout(function(){
+              
+                randoms++;
+                cb(randoms);
+          
+          },Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000)
+     } 
+     /*setTimeout(function(){
+           
+            test2(cb);
+           
+     },Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000);*/
+     test2(cb);
+     
+}
+
+test("first", function(a){
+    console.log("first "+a);     
+});
+test("second", function(a){
+    console.log("second "+a);     
+});
+test("third", function(a){
+    console.log("third "+a);     
+});
+test("fourth", function(a){
+    console.log("fourth "+a);     
+});
+
+
+

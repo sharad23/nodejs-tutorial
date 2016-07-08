@@ -1,0 +1,20 @@
+//this example is for non-blocking
+var test =  function(cb){
+  
+  setTimeout(function(){ return cb(); },1000);   
+  
+       
+}
+
+var test2 = function(){
+   
+    return test(function(){
+       return 'i love pratima';
+    });
+    
+
+}
+
+var result = test2();
+console.log(result);
+
